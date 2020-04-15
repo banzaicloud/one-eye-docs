@@ -69,7 +69,7 @@ EOF
 
 ### Example: Configure logging Flow to route logs from an event tailer
 
-The following example uses the flow's match term to listen the previously created "sample" Eventtailer's log. 
+The following example configures a flow to route the previously created `sample-eventtailer` EventTailer's log. 
 
 ```bash
 kubectl apply -f - <<EOF
