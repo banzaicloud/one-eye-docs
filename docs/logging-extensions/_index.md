@@ -65,7 +65,6 @@ EOF
 | positionVolume | volume.KubernetesVolume | No | - | Volume definition for tracking fluentbit file positions (optional)<br> |
 | workloadMetaOverrides | *types.MetaBase | No | - | Override metadata of the created resources<br> |
 | workloadOverrides | *types.PodSpecBase | No | - | Override podSpec fields for the given statefulset<br> |
-| containerOverrides | *types.ContainerBase | No | - | Override container fields for the given statefulset<br> |
 
 ### Example: Configure logging Flow to route logs from an event tailer
 
@@ -107,7 +106,7 @@ kubectl apply -f - <<EOF
 apiVersion: logging-extensions.banzaicloud.io/v1alpha1
 kind: HostTailer
 metadata:
-  name: hosttailer-sample
+  name: systemd-hosttailer-sample
 spec:
   controlNamespace: default
   enableRecreateWorkloadOnImmutableFieldChange: false
@@ -128,6 +127,7 @@ EOF
 | disabled | bool | No | - | Disable component<br> |
 | systemdFilter | string | No | - | Filter to select systemd unit example: kubelet.service<br> |
 | maxEntries | int | No | - | Maximum entries to read when starting to tail logs to avoid high pressure<br> |
+| containerOverrides | *types.ContainerBase | No | - | Override container fields for the given tailer<br> |
 
 ### Kubernetes Host File tailer
 
@@ -141,7 +141,7 @@ kubectl apply -f - <<EOF
 apiVersion: logging-extensions.banzaicloud.io/v1alpha1
 kind: HostTailer
 metadata:
-  name: sample
+  name: file-hosttailer-sample
 spec:
   controlNamespace: default
   enableRecreateWorkloadOnImmutableFieldChange: true
@@ -159,10 +159,11 @@ EOF
 | name | string | Yes | - | Name for the tailer<br> |
 | path | string | No | - | Path to the loggable file<br> |
 | disabled | bool | No | - | Disable tailing the file<br> |
+| containerOverrides | *types.ContainerBase | No | - | Override container fields for the given tailer<br> |
 
-### Example: Configure logging Flow to listen Hosttailer
+### Example: Configure logging Flow to route logs from a Hosttailer
 
-The following example uses the flow's match term to listen the previously created "sample" Hosttailer's log. 
+The following example uses the flow's match term to listen the previously created `file-hosttailer-sample` Hosttailer's log. 
 
 ```bash
 kubectl apply -f - <<EOF
@@ -174,17 +175,16 @@ metadata:
 spec:
   filters:
   - tag_normaliser: {}
-  - stdout: {}
   # keeps data matching to label, the rest of the data will be discarded by this flow implicitly
   match:
   - select:
       labels: 
-        app.kubernetes.io/name: sample-tailer
+        app.kubernetes.io/name: file-hosttailer-sample
       # there might be a need to match on container name too (in case of multiple containers)
       container_names:
-        - sample-tailer-nginx-access
+        - nginx-access
   outputRefs:
-    - null-output
+    - sample-output
 EOF
 ```
 
@@ -226,37 +226,6 @@ EOF
 | controlNamespace | string | Yes | - | The resources of HostTailer will be placed into this namespace<br> |
 | workloadMetaOverrides | *types.MetaBase | No | - | Override metadata of the created resources<br> |
 | workloadOverrides | *types.PodSpecBase | No | - | Override podSpec fields for the given daemonset<br> |
-
-### Example: Configure logging Flow with explicit exclusion
-
-The following example uses the flow's match term to listen the previously created "multi-sample" Hosttailer's log. Keeps only the nginx's log tail, all the other tailers are excluded.
-
-```bash
-kubectl apply -f - <<EOF
-apiVersion: logging.banzaicloud.io/v1beta1
-kind: Flow
-metadata:
-  name: multi-hosttailer-flow
-  namespace: default
-spec:
-  filters:
-  - tag_normaliser: {}
-  - stdout: {}
-  match:
-  # keep all logs matched to label, so there is no need to check container names
-  - select:
-      labels: 
-        app.kubernetes.io/name: multi-sample-tailer
-  # then remove unwanted logs explicitly
-  - exclude:
-      labels:
-        app.kubernetes.io/name: sample-tailer
-      container_names:
-        - sample-tailer-my-systemd-tailer
-  outputRefs:
-    - null-output
-EOF
-```
 
 ### Advanced configuration overrides
 
