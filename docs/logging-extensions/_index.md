@@ -87,7 +87,7 @@ spec:
       labels:
         app.kubernetes.io/name: sample-event-tailer
   outputRefs:
-    - null-output
+    - sample-output
 EOF
 ```
 
