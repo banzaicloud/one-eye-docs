@@ -67,7 +67,7 @@ EOF
 | workloadOverrides | *types.PodSpecBase | No | - | Override podSpec fields for the given statefulset<br> |
 | containerOverrides | *types.ContainerBase | No | - | Override container fields for the given statefulset<br> |
 
-### Example: Configure logging Flow to listen Eventtailer
+### Example: Configure logging Flow to route logs from an event tailer
 
 The following example uses the flow's match term to listen the previously created "sample" Eventtailer's log. 
 
