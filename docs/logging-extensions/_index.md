@@ -81,7 +81,6 @@ metadata:
 spec:
   filters:
   - tag_normaliser: {}
-  - stdout: {}
   match:
   # keeps data matching to label, the rest of the data will be discarded by this flow implicitly
   - select:
