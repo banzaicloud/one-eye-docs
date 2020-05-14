@@ -186,5 +186,5 @@ In real-life scenarios you have several flows and outputs for different purposes
     one-eye ingress connect
     ```
 
-    The One Eye UI opens in your browser.
+    The [One Eye UI](/docs/one-eye/configuration-overview/) opens in your browser.
     ![One Eye Dashboard](/blog/one-eye-for-observability/one-eye-connect.png)
