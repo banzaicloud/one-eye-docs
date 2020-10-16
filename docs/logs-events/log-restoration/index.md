@@ -10,7 +10,7 @@ The log restoration feature of One Eye allows you to retrieve a set of logs into
 
 - Restoring logs is supported only from S3 output
 - The elastic operator must be installed on the cluster running One Eye
-
+- The cluster running One Eye must have enough resources to store the restored logs, and deploy an Elastic instance. The exact requirements depend on the amount of logs to be restored.
 
 ## Restore logs
 
@@ -50,6 +50,8 @@ To tail your logs, or the logs that match a specific query in real-time, complet
 ## Delete the restored logs
 
 To delete the restored logs and/or the Elastic instance from the One Eye cluster, you must delete the related resources manually. The Elastic resources are named after the **Index prefix** parameter of the restored logs, and run in the namespace specified in the configuration of the log restoration.
+<!-- FIXME operator/cli mode link or description -->
+
 ## Advanced builder JSON scheme {#builder-json}
 
 When selecting **Advanced Builder**, you can specify which logs you want to restore in a JSON object. The JSON has three fields, all of them are optional: **namespaces**, **pods**, and **containers**. Each field can contain a list of RE2 regular expressions that match the names of namespaces, pods, or containers to select. Note that:
