@@ -39,7 +39,7 @@ To restore archived log messages, complete the following steps.
 
 To tail your logs, or the logs that match a specific query in real-time, complete the following steps.
 
-1. Open the One Eye web interface. <!-- FIXME link/xinclude to ingress connectre > we should add a separate topic (Access the One Eye UI) -->
+1. [Open the One Eye web interface]({{< relref "/docs/one-eye/quickstart/_index.md#display-the-logging-flow" >}}).
 1. Select **MENU > LOG RESTORATION**. This page the log restoration jobs and their details.
     ![Restored logs list](restored-logs-list.png)
 1. Click the ID of a set of logs. The access details of the logs is displayed.
