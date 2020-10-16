@@ -4,9 +4,13 @@ shorttitle: Restore logs
 weight: 600
 ---
 
-The **MENU > LOG RESTORATION** page allows you <!-- FIXME -->.
+The log restoration feature of One Eye allows you to retrieve a set of logs into an Elasticsearch instance where you can browse and analyze them. This is useful for example in auditing and troubleshooting situations.
 
-<!-- FIXME ## Prerequisites-->
+## Prerequisites
+
+- Restoring logs is supported only from S3 output
+- The elastic operator must be installed on the cluster running One Eye
+
 
 ## Restore logs
 
@@ -19,24 +23,58 @@ To restore archived log messages, complete the following steps.
 1. Select the output from which you want to restore logs, then click **Next**.
 1. Select the cluster and the time interval for which you want to restore logs.
     ![Log Restoration Wizard](log-restoration-cluster.png)
-1. To specify the details of the logs to be restored on the UI, select **Simple Builder**. Alternatively, you can select **Advanced Builder**, and specify the details in a JSON file.
+1. To specify the details of the logs to be restored on the UI, select **Simple Builder**. Alternatively, you can select **Advanced Builder**, and paste a [JSON that describes the logs to restore](#builder-json).
 1. To restore the logs of only specific namespaces, pod, and containers, search for the name of the respective resource, and select the ones you need. If you want to restore the logs of every resource, select **Any**. Note that searching for the resources returns only exact matches, unless you include the * wildcard.
     ![Filter logs to restore](log-restoration-namespace.png)
-1. <!-- FIXME -->
-    ![ <!-- FIXME --> ](log-restoration-configuration.png)
+1. Set a prefix for the Elastic index. In addition to using it as a prefix for the Elastic index, the Elastic resources are named after this parameter.
+    ![Set Elastic parameters](log-restoration-configuration.png)
+1. Set the namespace where the log restoration job will run. The Elastic instance is also deployed into this namespace.
 1. Before restoring the logs starts, review the settings of the process. If everything is as you intended, click **Next**.
     ![Log Restoration overview](log-restoration-overview.png)
 1. One Eye starts restoring the logs. Depending on the amount of logs to restore, this can take a long time.
     ![Log Restoration overview](log-restoration-progress.png)
-1. After the process is successfully completed, you can [access the restored logs](#access-logs).
+1. After the job is successfully completed, you can [access the restored logs](#access-logs).
 
 ## Access restored logs {#access-logs}
 
 To tail your logs, or the logs that match a specific query in real-time, complete the following steps.
 
-1. Open the One Eye web interface. <!-- FIXME link/xinclude az ingress connectre -->
-1. Select **MENU > LOG RESTORATION**.
+1. Open the One Eye web interface. <!-- FIXME link/xinclude to ingress connectre > we should add a separate topic (Access the One Eye UI) -->
+1. Select **MENU > LOG RESTORATION**. This page the log restoration jobs and their details.
     ![Restored logs list](restored-logs-list.png)
 1. Click the ID of a set of logs. The access details of the logs is displayed.
     ![Restored logs details](restored-logs-details.png)
 1. Click the URL to open the Elasticsearch service where the logs are available, and use the username and password to access them (click the eye icon to display the password).
+
+## Delete the restored logs
+
+To delete the restored logs and/or the Elastic instance from the One Eye cluster, you must delete the related resources manually. The Elastic resources are named after the **Index prefix** parameter of the restored logs, and run in the namespace specified in the configuration of the log restoration.
+## Advanced builder JSON scheme {#builder-json}
+
+When selecting **Advanced Builder**, you can specify which logs you want to restore in a JSON object. The JSON has three fields, all of them are optional: **namespaces**, **pods**, and **containers**. Each field can contain a list of RE2 regular expressions that match the names of namespaces, pods, or containers to select. Note that:
+
+- If a list is empty, or set it to *null*, it matches every possible value.
+- Elements of a list have logical OR relationship.
+
+For example:
+
+Match every pod and container of the namespaces beginning with *kube-*:
+
+```json
+{"namespaces": ["kube-.*"]}
+```
+
+Match every pod and container of the *default* namespace, and namespaces beginning with *kube-*:
+
+```json
+{"namespaces": ["default", "kube-.*"]}
+```
+
+Match the logs of the *istio-proxy* containers in the *demo* namespace:
+
+```json
+{
+    "namespaces": ["demo"],
+    "containers": ["istio-proxy"]
+}
+```
