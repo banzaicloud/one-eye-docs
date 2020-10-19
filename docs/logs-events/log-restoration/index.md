@@ -59,7 +59,7 @@ Currently, the latter can only be performed manually, by deleting the Elasticsea
 
 ## Advanced builder JSON scheme {#builder-json}
 
-When selecting **Advanced Builder**, you can specify which logs you want to restore in a JSON object. The JSON has three fields, all of them are optional: **namespaces**, **pods**, and **containers**. Each field can contain a list of RE2 regular expressions that match the names of namespaces, pods, or containers to select. Note that:
+When selecting **Advanced Builder**, you can specify which logs you want to restore in a JSON object. The JSON has three fields, all of them are optional: **namespaces**, **pods**, and **containers**. Each field can contain a list of [RE2](https://github.com/google/re2/wiki/Syntax) regular expressions that match the names of namespaces, pods, or containers to select. Note that:
 
 - If a list is empty, or set it to *null*, it matches every possible value.
 - Elements of a list have logical OR relationship.
