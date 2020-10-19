@@ -41,7 +41,7 @@ To restore archived log messages, complete the following steps.
 To view your restored logs, complete the following steps.
 
 1. [Open the One Eye web interface]({{< relref "/docs/one-eye/quickstart/_index.md#display-the-logging-flow" >}}).
-1. Select **MENU > LOG RESTORATION**. This page the log restoration jobs and their details.
+1. Select **MENU > LOG RESTORATION**. This page shows log restoration jobs and their details.
     ![Restored logs list](restored-logs-list.png)
 1. Click the ID of a set of logs. The access details of the logs is displayed.
     ![Restored logs details](restored-logs-details.png)
