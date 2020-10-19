@@ -25,7 +25,7 @@ To restore archived log messages, complete the following steps.
 1. Select the cluster and the time interval for which you want to restore logs.
     ![Log Restoration Wizard](log-restoration-cluster.png)
 1. To specify the details of the logs to be restored on the UI, select **Simple Builder**. Alternatively, you can select **Advanced Builder**, and paste a [JSON that describes the logs to restore](#builder-json).
-1. To restore the logs of only specific namespaces, pod, and containers, search for the name of the respective resource, and select the ones you need. If you want to restore the logs of every resource, select **Any**. Note that searching for the resources returns only exact matches, unless you include the * wildcard.
+1. To restore the logs of only specific namespaces, pods, and containers, search for the name of the respective resource, and select the ones you need. If you want to restore the logs of every resource, select **Any**. Note that searching for the resources returns only exact matches, unless you include the `.*` wildcard.
     ![Filter logs to restore](log-restoration-namespace.png)
 1. Set a prefix for the Elastic index. In addition to using it as a prefix for the Elastic index, currently the Elastic resources are named after this parameter.
     ![Set Elastic parameters](log-restoration-configuration.png)
