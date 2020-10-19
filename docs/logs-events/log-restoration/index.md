@@ -38,7 +38,7 @@ To restore archived log messages, complete the following steps.
 
 ## Access restored logs {#access-logs}
 
-To tail your logs, or the logs that match a specific query in real-time, complete the following steps.
+To view your restored logs, complete the following steps.
 
 1. [Open the One Eye web interface]({{< relref "/docs/one-eye/quickstart/_index.md#display-the-logging-flow" >}}).
 1. Select **MENU > LOG RESTORATION**. This page the log restoration jobs and their details.
