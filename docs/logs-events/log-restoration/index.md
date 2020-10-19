@@ -17,7 +17,7 @@ The log restoration feature of One Eye allows you to retrieve a set of logs into
 To restore archived log messages, complete the following steps.
 
 1. [Open the One Eye web interface]({{< relref "/docs/one-eye/quickstart/_index.md#display-the-logging-flow" >}}).
-1. Select **MENU > LOG RESTORATION**, then click ![Create new icon](/docs/one-eye/headless/icon-create-new.png).
+1. Select **MENU > LOG RESTORATION**.
     ![Restored logs list](restored-logs-list.png)
 1. Click ![Create new icon](/docs/one-eye/headless/icon-create-new.png). The Log Restoration Wizard opens.
     ![Log Restoration Wizard](log-restoration-output.png)
