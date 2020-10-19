@@ -8,7 +8,7 @@ The log restoration feature of One Eye allows you to retrieve a set of logs into
 
 ## Prerequisites
 
-- Restoring logs is supported only from S3 output
+- Restoring logs is supported only from S3 outputs
 - The elastic operator must be installed on the cluster running One Eye
 - The cluster running One Eye must have enough resources to store the restored logs, and deploy an Elastic instance. The exact requirements depend on the amount of logs to be restored.
 
