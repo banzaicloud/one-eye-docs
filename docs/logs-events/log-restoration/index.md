@@ -49,7 +49,12 @@ To view your restored logs, complete the following steps.
 
 ## Delete the restored logs
 
-To delete the restored logs and/or the Elastic instance from the One Eye cluster, you must delete the related resources manually. The Elastic resources are named after the **Index prefix** parameter of the restored logs, and run in the namespace specified in the configuration of the log restoration.
+If you're done analysing the restored logs, you can either: 
+
+- deleted the restored logs from Elasticsearch, or
+- delete the whole Elasticsearch instance from the One Eye cluster.
+
+Currently, the latter can only be performed manually, by deleting the Elasticsearch resource from the cluster. The Elasticsearch resource is named after the **Index prefix** parameter and exists in the namespace specified for the restoration job.
 <!-- FIXME operator/cli mode link or description -->
 
 ## Advanced builder JSON scheme {#builder-json}
