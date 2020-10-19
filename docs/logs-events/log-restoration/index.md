@@ -29,7 +29,7 @@ To restore archived log messages, complete the following steps.
     ![Filter logs to restore](log-restoration-namespace.png)
 1. Set a prefix for the Elastic index. In addition to using it as a prefix for the Elastic index, currently the Elastic resources are named after this parameter.
     ![Set Elastic parameters](log-restoration-configuration.png)
-1. Set the namespace where the log restoration job will run. The Elastic instance is also deployed into this namespace.
+1. Set the namespace where the Elastic instance will be deployed to. The log restoration job is also run in this namespace.
 1. Before restoring the logs starts, review the settings of the process. If everything is as you intended, click **Next**.
     ![Log Restoration overview](log-restoration-overview.png)
 1. One Eye starts restoring the logs. Depending on the amount of logs to restore, this can take a long time.
