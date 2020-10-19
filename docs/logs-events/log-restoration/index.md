@@ -43,7 +43,7 @@ To view your restored logs, complete the following steps.
 1. [Open the One Eye web interface]({{< relref "/docs/one-eye/quickstart/_index.md#display-the-logging-flow" >}}).
 1. Select **MENU > LOG RESTORATION**. This page shows log restoration jobs and their details.
     ![Restored logs list](restored-logs-list.png)
-1. Click the ID of a set of logs. The access details of the logs is displayed.
+1. Click the ID of a restoration job. The details for accessing the logs are displayed.
     ![Restored logs details](restored-logs-details.png)
 1. Click the URL to open the Elasticsearch service where the logs are available, and use the username and password to access them (click the eye icon to display the password).
 
