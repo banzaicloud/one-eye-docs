@@ -9,7 +9,7 @@ The log restoration feature of One Eye allows you to retrieve a set of logs into
 ## Prerequisites
 
 - Restoring logs is supported only from S3 outputs
-- The elastic operator must be installed on the cluster running One Eye
+- The [Elastic operator](https://github.com/elastic/cloud-on-k8s) must be installed on the cluster running One Eye. You can install the operator from the [One Eye CLI](/docs/one-eye/cli/reference/one-eye_elasticsearch_install/).
 - The cluster running One Eye must have enough resources to store the restored logs, and deploy an Elastic instance. The exact requirements depend on the amount of logs to be restored.
 
 ## Restore logs
@@ -49,13 +49,16 @@ To view your restored logs, complete the following steps.
 
 ## Delete the restored logs
 
-If you're done analysing the restored logs, you can either: 
+If you're done analyzing the restored logs, you can either:
 
 - deleted the restored logs from Elasticsearch, or
 - delete the whole Elasticsearch instance from the One Eye cluster.
 
-Currently, the latter can only be performed manually, by deleting the Elasticsearch resource from the cluster. The Elasticsearch resource is named after the **Index prefix** parameter and exists in the namespace specified for the restoration job.
-<!-- FIXME operator/cli mode link or description -->
+Currently, the latter can only be performed manually, by deleting the Elasticsearch resource from the cluster. The Elasticsearch resource is named after the **Index prefix** parameter and exists in the namespace specified for the restoration job. For example, you can run the following command on the cluster:
+
+```bash
+kubectl delete elasticsearch -n <namespace> <index prefix>
+```
 
 ## Advanced builder JSON scheme {#builder-json}
 
