@@ -33,6 +33,9 @@ Install the One Eye command-line tool. You can use the One Eye CLI tool to insta
 > Note: The One Eye CLI supports macOS and Linux (x86_64). It may work on Windows natively, but we don't test it.
 
 1. [Register for an evaluation version](/products/try-one-eye/).
+
+    {{< include-headless "doc/note-evaluation-suspended.md" >}}
+
 1. Install the `one-eye-cli` package for your environment by running the following command:
 
     ```bash
