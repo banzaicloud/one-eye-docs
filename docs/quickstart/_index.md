@@ -38,9 +38,7 @@ Install the One Eye command-line tool. You can use the One Eye CLI tool to insta
 
 1. Install the `one-eye-cli` package for your environment by running the following command:
 
-    ```bash
-    curl https://getoneeye.sh | sh
-    ```
+    {{< include-headless "download-oneeye.md" >}}
 
     For other options, see the [One Eye CLI Installation Guide](../cli/install/).
 

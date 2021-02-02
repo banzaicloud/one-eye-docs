@@ -6,11 +6,9 @@ weight: 10
 
 To install the One Eye, [register for an evaluation version](/products/try-one-eye/) and run the following command to install the CLI tool:
 
-```bash
-$ curl https://getoneeye.sh | sh
-```
+{{< include-headless "download-oneeye.md" >}}
 
-The [script](https://getoneeye.sh) automatically chooses the best distribution package for your platform.
+The script automatically chooses the best distribution package for your platform.
 
 Available packages:
 
@@ -20,9 +18,7 @@ Available packages:
 
 You can also select the installation method (one of `auto`, `deb`, `rpm`, `brew`, `tar`) explicitly:
 
-```bash
-$ curl https://getoneeye.sh | sh -s -- deb
-```
+{{< include-headless "download-oneeye-deb.md" >}}
 
 On macOS, you can install the CLI directly from ***Homebrew***:
 
