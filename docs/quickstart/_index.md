@@ -18,7 +18,7 @@ Before deploying One Eye on your cluster, complete the following tasks.
 
 You need a Kubernetes cluster to test One Eye with. If you don't already have a Kubernetes cluster to work with, create one with one of the following methods:
 
-- You can use the [self-hosted](../../pipeline/quickstart/install-pipeline/) or the [free online](../../pipeline/quickstart/install-pipeline/try/) version of Banzai Cloud Pipeline to [deploy a cluster](../../pipeline/quickstart/create-cluster/).
+- You can use the [Banzai Cloud Pipeline platform](/products/pipeline/) to [deploy a cluster](../../pipeline/quickstart/create-cluster/).
 - Deploy a [single-node](../../pke/quickstart/single/) Banzai Cloud PKE cluster on a physical or virtual Linux box.
 - Launch a cluster at one of the many cloud providers' managed offerings at their console.
 - Use [KinD](https://kind.sigs.k8s.io/docs/user/quick-start/) on your machine (make sure to increase the resource allocation of Docker for Mac).
