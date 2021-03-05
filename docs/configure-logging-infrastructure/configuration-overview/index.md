@@ -1,6 +1,8 @@
 ---
 title: Configuration overview
 weight: 100
+aliases:
+    - /docs/one-eye/configuration-overview/
 ---
 
 The **MENU > LOGGING OVERVIEW** page on the One Eye web interface visualizes your logging configuration and annotates it with real-time information about throughput. Various metrics based on the current log traffic are also displayed. The topology page serves as a starting point for diagnosing problems within your logging infrastructure.
@@ -52,16 +54,21 @@ The graph serves as a visual monitoring tool, as it displays various errors and 
 
 <img src="topology-legend.png" alt="Topology view legend" width="50%"/>
 
-- To display the metrics of a component in a sidebar, click on the component (for example, on an output).
+- To display the metrics of a component in a sidebar, click on the component (for example, on an output), then select **Metrics**.
     ![Metrics and configuration of a logging component](logging-overview-sidebar.png)
 
-    - To display the YAML configuration of the component, click **Configuration**.
     - To open the related dashboards in [Grafana](https://grafana.com), click ![Open metrics in Grafana](/img/docs/backyards/icon-open-in-grafana.png).
+
+- To list the pods that belong to a logging flow, click the icon of the match selector of the logging flow, then select **Matching pods**. To display the [details of a pod]({{< relref "/docs/one-eye/logs-events/workloads/index.md#pod" >}}), click ![Workload icon](/docs/one-eye/headless/icon-workload.png).
+
+    ![List of matching pods in a logging flow](flow-matching-pods.png)
+
+- To display the YAML configuration of the component, click on the component, then click **Configuration**.
 
 ## Drill-down to the pods and nodes
 
 {{% include-headless "doc/one-eye/drill-down-intro.md" %}}
 
-## Configure your logging infrastructure
+## Configure the logging infrastructure
 
-You can configure the logging infrastructure from the command line by configuring the [Logging operator](/docs/one-eye/logging-operator/) and the [Logging Extensions operator](/docs/one-eye/logging-extensions/).
+To configure your logging infrastructure, see {{% xref "/docs/one-eye/configure-logging-infrastructure/flow-output/index.md" %}}.

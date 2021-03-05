@@ -1,9 +1,11 @@
 ---
 title: Services
 weight: 200
+aliases:
+    - /docs/services/
 ---
 
-{{< contents >}}
+
 
 {{% include-headless "doc/one-eye/drill-down-intro.md" %}}
 
@@ -25,6 +27,8 @@ The list displays the following information about the services:
     dns-tcp: 53/ TCP → 53/ TCP
     metrics: 9153/ TCP → 9153/ TCP
     ```
+
+> To quickly find a service, or to filter the list to show only services that match a criteria, click **![Show filters](/docs/one-eye/headless/icon-filters.png)** to display the filter bar.
 
 Click on the name of a service to display its details.
 
