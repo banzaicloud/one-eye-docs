@@ -47,7 +47,7 @@ Available Commands:
 To remove the One Eye and any other components from your cluster, run the following command. It takes care of removing these components in the correct order.
 
 ```bash
-$ one-eye removeall
+$ one-eye observer removeall
 ```
 
 To delete the One Eye operator, run:
