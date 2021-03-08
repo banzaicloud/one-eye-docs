@@ -12,7 +12,7 @@ The following command installs an `nginx` ingress and the [One Eye](/products/on
 $ one-eye ingress install --update
 ```
 
-To access the [One Eye web interface](/docs/one-eye-docs/configuration-overview/), run the `one-eye ingress connect` command.
+To access the [One Eye web interface](/docs/one-eye/configure-logging-infrastructure/configuration-overview/), run the `one-eye ingress connect` command.
 
 ## Next steps
 

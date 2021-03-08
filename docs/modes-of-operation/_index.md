@@ -3,8 +3,6 @@ title: Modes of operation
 weight: 450
 ---
 
-{{< contents >}}
-
 To support the different use-cases from Day 0 to Day 2 operations, One Eye has different modes of operation. The same binary can act as:
 
 - a CLI tool for [imperative use](#imperative),
