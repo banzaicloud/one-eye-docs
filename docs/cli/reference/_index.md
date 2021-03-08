@@ -19,11 +19,15 @@ Usage:
 Available Commands:
 
   cert-manager   Manage the cert-manager chart
+  elasticsearch  Manage the elasticsearch chart
+  grafana        Manage the grafana-operator chart
   help           Help about any command
   ingress        Manage ingress for one-eye
   license        Show Evaluation License
+  loggenerator   Manage the log-generator chart
   logging        Manage the logging components
   loki           Manage the loki chart
+  observer       Manage the One Eye Observer
   prometheus     Manage the prometheus-operator chart
   reconcile      Reconcile all components of an Observer
   removeall      Removes all previously installed operators
