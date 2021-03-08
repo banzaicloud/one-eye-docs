@@ -2,6 +2,7 @@
 title: Upgrade One Eye CLI
 shortTitle: Upgrade
 weight: 40
+commercialContent: true
 ---
 
 How you can upgrade an existing One Eye CLI installation depends on how you have originally installed it.
