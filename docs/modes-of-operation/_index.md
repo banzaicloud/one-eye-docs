@@ -35,13 +35,13 @@ To use One Eye in imperative mode, [install the one-eye command-line tool](../cl
 
 The following components can be installed/uninstalled individually. The `one-eye observer removeall` command uninstalls them all. For details on installing and uninstalling the One Eye operator, see [Operator mode](#operator).
 
-- [cert-manager]({{< relref "/docs/one-eye/cli/reference/one-eye_cert-manager.md" >}}): `one-eye cert-manager [install|uninstall]`
-- [ingress (backend and UI)]({{< relref "/docs/one-eye/cli/reference/one-eye_ingress.md" >}}): `one-eye ingress [install|uninstall]`
-- [logging]({{< relref "/docs/one-eye/cli/reference/one-eye_logging.md" >}}): `one-eye logging [install|uninstall]`
-- [loki]({{< relref "/docs/one-eye/cli/reference/one-eye_loki.md" >}}): `one-eye loki [install|uninstall]`
-- [prometheus]({{< relref "/docs/one-eye/cli/reference/one-eye_prometheus.md" >}}): `one-eye prometheus [install|uninstall]`
-- [tailer-webhook]({{< relref "/docs/one-eye/cli/reference/one-eye_tailer-webhook.md" >}}): `one-eye tailer-webhook [install|uninstall]`
-- [thanos]({{< relref "/docs/one-eye/cli/reference/one-eye_thanos.md" >}}): `one-eye thanos [install|uninstall]`
+- [cert-manager]({{< relref "/docs/one-eye/cli/reference/one-eye_cert-manager.md" >}}): `one-eye cert-manager [install|delete]`
+- [ingress (backend and UI)]({{< relref "/docs/one-eye/cli/reference/one-eye_ingress.md" >}}): `one-eye ingress [install|delete]`
+- [logging]({{< relref "/docs/one-eye/cli/reference/one-eye_logging.md" >}}): `one-eye logging [install|delete]`
+- [loki]({{< relref "/docs/one-eye/cli/reference/one-eye_loki.md" >}}): `one-eye loki [install|delete]`
+- [prometheus]({{< relref "/docs/one-eye/cli/reference/one-eye_prometheus.md" >}}): `one-eye prometheus [install|delete]`
+- [tailer-webhook]({{< relref "/docs/one-eye/cli/reference/one-eye_tailer-webhook.md" >}}): `one-eye tailer-webhook [install|delete]`
+- [thanos]({{< relref "/docs/one-eye/cli/reference/one-eye_thanos.md" >}}): `one-eye thanos [install|delete]`
 
 ## Reconciler mode {#reconcile}
 
