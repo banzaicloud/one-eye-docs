@@ -29,23 +29,23 @@ To search and review the collected metrics, complete the following steps.
 
 1. Set the parameters.
 
-```json
-{
-apiVersion: one-eye.banzaicloud.io/v1alpha1
-kind: Observer
-  name: one-eye
-spec:
-  prometheus:
-    enabled: true
-    namespace: default
-    prometheusOperatorChart:
-      values: '{"prometheus":{"prometheusSpec":{"shards":"3","replicas":"2"}}}'
+    ```json
+    {
+    apiVersion: one-eye.banzaicloud.io/v1alpha1
+    kind: Observer
+      name: one-eye
+    spec:
+      prometheus:
+        enabled: true
+        namespace: default
+        prometheusOperatorChart:
+          values: '{"prometheus":{"prometheusSpec":{"shards":"3","replicas":"2"}}}'
 
-}
-```
+    }
+    ```
 
 1. Apply the configuration change.
 
-```bash
-go run cmd/one-eye/main.go observer reconcile
-```
+    ```bash
+    go run cmd/one-eye/main.go observer reconcile
+    ```
