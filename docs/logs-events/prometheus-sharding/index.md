@@ -39,7 +39,7 @@ spec:
     enabled: true
     namespace: default
     prometheusOperatorChart:
-      values: '{"prometheus":{"prometheusSpec":{"shards":"3","replicas":"2"}}}}'
+      values: '{"prometheus":{"prometheusSpec":{"shards":"3","replicas":"2"}}}'
 
 }
 ```
