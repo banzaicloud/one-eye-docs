@@ -115,10 +115,10 @@ The helm chart installs a One Eye observer with the following components enabled
 * Logging Operator
 * Elasticsearch
 * Logging Extensions Operator
-** Host file tailer support
-** Host journal tailer support
-** Kubernetes Event tailer support
-** In container file tailer webhook
+    * Host file tailer support
+    * Host journal tailer support
+    * Kubernetes Event tailer support
+    * In-container file tailer webhook
 * Cert-manager
 
 ## The Observer Custom Resource {#cr}
