@@ -3,9 +3,7 @@ title: Quickstart
 weight: 50
 ---
 
-
-
-To **evaluate** the services [Banzai Cloud One Eye](/products/one-eye/) (One Eye) offers, we recommend to create a test environment.
+To **evaluate** the services [Banzai Cloud One Eye](/products/one-eye/) (One Eye) offers, we recommend creating a test environment.
 This way you can start over any time, and try all the options you are interested in without having to worry about changes made to your existing environment, even if it's not used in production.
 
 **Production installation** is very similar, but you must exactly specify which components you want to use.
@@ -14,37 +12,42 @@ This way you can start over any time, and try all the options you are interested
 
 Before deploying One Eye on your cluster, complete the following tasks.
 
-### Create a test cluster
+1. Create a test cluster.
 
-You need a Kubernetes cluster to test One Eye with. If you don't already have a Kubernetes cluster to work with, create one with one of the following methods:
+    You need a Kubernetes cluster to test One Eye with. If you don't already have a Kubernetes cluster to work with, create one with one of the following methods:
 
-- Launch a cluster at one of the many cloud providers' managed offerings at their console.
-- Use [KinD](https://kind.sigs.k8s.io/docs/user/quick-start/) on your machine (make sure to increase the resource allocation of Docker for Mac).
+    - Launch a cluster at one of the many cloud providers' managed offerings at their console.
+    - Use [KinD](https://kind.sigs.k8s.io/docs/user/quick-start/) on your machine (make sure to increase the resource allocation of Docker for Mac).
 
-### Create an object store
+    <!-- FIXME: Resource requirements? -->
 
-You will need an object store. Thanos supports many types of object storage, see the [official Thanos documentation](https://thanos.io/tip/thanos/storage.md/) for details.
+1. (Optional) If you want to test One Eye in a multicluster environment, create one more cluster.
+1. Create an object store.
 
-### Install the One Eye tool
+    You will need an object store. Thanos supports many types of object storage, see the [official Thanos documentation](https://thanos.io/tip/thanos/storage.md/) for details.
 
-Install the One Eye command-line tool. You can use the One Eye CLI tool to install One Eye and other components to your cluster.
-> Note: The One Eye CLI supports macOS and Linux (x86_64). It may work on Windows natively, but we don't test it.
+1. Install the One Eye tool.
 
-1. [Register for an evaluation version](/products/try-one-eye/).
+    Install the One Eye command-line tool. You can use the One Eye CLI tool to install One Eye and other components to your cluster.
+    > Note: The One Eye CLI supports macOS and Linux (x86_64). It may work on Windows natively, but we don't test it.
 
-    {{< include-headless "doc/note-evaluation-suspended.md" >}}
+    1. [Register for an evaluation version](/products/try-one-eye/).
 
-1. Install the `one-eye-cli` package for your environment by running the following command:
+        {{< include-headless "doc/note-evaluation-suspended.md" >}}
 
-    {{< include-headless "download-oneeye.md" >}}
+    1. Install the `one-eye-cli` package for your environment by running the following command:
 
-    For other options, see the [One Eye CLI Installation Guide](../cli/install/).
+        {{< include-headless "download-oneeye.md" >}}
+
+        For other options, see the [One Eye CLI Installation Guide](../cli/install/).
 
 {{% include-headless "doc/quickstart-set-kubernetes-context.md" %}}
 
 ## Deploy One Eye
 
 After you have completed the [Prerequisites](#prerequisites), you can install One Eye on a single cluster.
+
+> Note: To use One Eye in a multicluster environment, you can [add peer clusters](#multicluster) later.
 
 1. The following command installs the *[Logging Operator](/docs/one-eye/logging-operator/)*, the *[Logging Extension](https://banzaicloud.com/docs/one-eye/logging-extensions/)*, a *Prometheus Operator*, and all dependencies.
 
@@ -190,3 +193,7 @@ In real-life scenarios you have several flows and outputs for different purposes
 
     The [One Eye UI](/docs/one-eye/configuration-overview/) opens in your browser.
     ![One Eye Dashboard](/docs/one-eye/configure-logging-infrastructure/configuration-overview/overview-nocallouts.png)
+
+## Configure a peer cluster {#multicluster}
+
+To use One Eye in a multicluster environment, follow the [Multicluster quickstart guide](/docs/one-eye/quickstart/multicluster/).
