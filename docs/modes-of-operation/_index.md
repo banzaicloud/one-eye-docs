@@ -110,20 +110,21 @@ helm del one-eye
 ### Default observer setup {#default-observer}
 
 The helm chart installs a One Eye observer with the following components enabled by default:
+
 * One Eye UI with Nginx Ingress and Loki preinstalled
 * Thanos Operator
 * Logging Operator
 * Elasticsearch
 * Logging Extensions Operator
-** Host file tailer support
-** Host journal tailer support
-** Kubernetes Event tailer support
-** In container file tailer webhook
+    * Host file tailer support
+    * Host journal tailer support
+    * Kubernetes Event tailer support
+    * In-container file tailer webhook
 * Cert-manager
 
 ## The Observer Custom Resource {#cr}
 
-One Eye installs the Observer Custom Resource with the following default values. You can examine specific fields of the Observer custom resource using the following command:
+One Eye installs the [Observer Custom Resource](/docs/one-eye/crds/oneeye_types/). You can examine specific fields of the Observer custom resource using the following command:
 
 ```bash
 kubectl explain observer --recursive
