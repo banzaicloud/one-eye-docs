@@ -60,9 +60,9 @@ One Eye provides a simple way to enable SSL encryption between the components of
 
 ## Multicluster metrics
 
-One Eye allows you to attach multiple peer clusters to a central observer cluster to make your metrics available centrally, and store in object storage in a cost and storage-efficient way. One Eye automates several steps of connecting and maintaining the peer clusters, making it possible to operate your monitoring infrastructure with a low overhead.
+One Eye allows you to attach multiple peer clusters to a central observer cluster to make your metrics available centrally, and store in object storage in a cost and storage-efficient way. One Eye automates several steps of connecting and maintaining the peer clusters, making it possible to operate your monitoring infrastructure with a low overhead. For details on how One Eye collects metrics from multiple clusters, see {{% xref "/docs/one-eye/multicluster/_index.md" %}}.
 
-<!-- FIXME: Figure, link -->
+<!-- FIXME: Figure -->
 
 ## Next steps
 
