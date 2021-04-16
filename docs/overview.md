@@ -19,7 +19,7 @@ Built on Prometheus, Thanos, Grafana, Loki, Fluentd, and Fluent Bit. Managed by 
 - Collect logs and metrics from pods and host files
 - Collect Kubernetes events
 - Enable encrypted communication between the components
-- Multicluster support: collect your logs and metrics to a single cluster from multiple peer clusters
+- Multicluster metrics: collect your metrics to a single cluster from multiple peer clusters
 
 ## Architecture
 
@@ -56,9 +56,9 @@ In addition to application logs, it can collect Kubernetes events, host and pod 
 
 One Eye provides a simple way to enable SSL encryption between the components of your logging infrastructure, and automates its management using cert-manager: it creates the custom resources required for TLS certificates, and renews the configuration of Fluentd and Fluent Bit accordingly.
 
-## Multicluster support
+## Multicluster metrics
 
-One Eye allows you to attach multiple peer clusters to a central observer cluster to make your logs and metrics available centrally, and store in object storage in a cost and storage-efficient way. One Eye automates several steps of connecting and maintaining the peer clusters, making it possible to operate your monitoring infrastructure with a low overhead.
+One Eye allows you to attach multiple peer clusters to a central observer cluster to make your metrics available centrally, and store in object storage in a cost and storage-efficient way. One Eye automates several steps of connecting and maintaining the peer clusters, making it possible to operate your monitoring infrastructure with a low overhead.
 
 <!-- FIXME: Figure, link -->
 

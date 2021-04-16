@@ -12,6 +12,8 @@ The following procedure shows you how to collect metrics from a peer cluster to 
 - You have completed the steps described in {{% xref "/docs/one-eye/quickstart/_index.md" %}} and you have a working One Eye deployment.
 - You have another cluster that will be the peer cluster.
 
+{{< include-headless "warning-prometheus-label.md" "one-eye" >}}
+
 ## Steps
 
 > Note: The following procedure requires you to switch between the Kubernetes context of the observer and the peer cluster. A convenient way to switch between contexts is to use the [kubectx tool](https://github.com/ahmetb/kubectx).
@@ -109,6 +111,8 @@ The following procedure shows you how to collect metrics from a peer cluster to 
         ```
 
     1. If not already installed, install Prometheus and the Thanos operator on the peer cluster.
+
+        {{< include-headless "warning-prometheus-label.md" "one-eye" >}}
 
         ```bash
         one-eye prometheus install --update

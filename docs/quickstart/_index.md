@@ -194,6 +194,6 @@ In real-life scenarios you have several flows and outputs for different purposes
     The [One Eye UI](/docs/one-eye/configuration-overview/) opens in your browser.
     ![One Eye Dashboard](/docs/one-eye/configure-logging-infrastructure/configuration-overview/overview-nocallouts.png)
 
-## Configure a peer cluster {#multicluster}
+## Multicluster metrics {#multicluster}
 
-To use One Eye in a multicluster environment, follow the [Multicluster quickstart guide](/docs/one-eye/quickstart/multicluster/).
+To use One Eye to collect metrics in a multicluster environment, follow the [Multicluster quickstart guide](/docs/one-eye/quickstart/multicluster/) to configure a peer cluster.
