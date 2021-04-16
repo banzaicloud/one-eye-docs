@@ -43,18 +43,20 @@ One Eye visualizes your logging infrastructure: your logging sources, flows, and
 
 ![One Eye Dashboard](/docs/one-eye/configure-logging-infrastructure/configuration-overview/overview-nocallouts.png)
 
+For details, see {{% xref "/docs/one-eye/configure-logging-infrastructure/configuration-overview/index.md" %}}.
+
 ## Drill-down to find problems fast
 
-Using the One Eye web UI, you can drill-down from the service, workload, or alert level, and trace back an issue by navigating deeper in the stack, and see the status, events, and most important metrics of your **Kubernetes controllers, pods, and nodes**.
+Using the One Eye web UI, you can drill-down from the service, workload, or alert level, and trace back an issue by navigating deeper in the stack, and see the status, events, and most important metrics of your **Kubernetes controllers, pods, and nodes**. For details, see {{% xref "/docs/one-eye/logs-events/_index.md" %}}.
 
 ## Collect logs from a wide range of sources
 
 One Eye allows you to collect a wide range of logs and metrics to give you the best possible overview of your infrastructure.
-In addition to application logs, it can collect Kubernetes events, host and pod logs, including the Fluentd pod logs, as well as logs from custom host files, like audit logs, systemd journals, and kubelet logs.
+In addition to application logs, it can collect Kubernetes events, host and pod logs, including the Fluentd pod logs, as well as logs from custom host files, like audit logs, systemd journals, and kubelet logs. For details, see {{% xref "/docs/one-eye/configure-logging-infrastructure/_index.md" %}}.
 
 ## Enable encrypted communication
 
-One Eye provides a simple way to enable SSL encryption between the components of your logging infrastructure, and automates its management using cert-manager: it creates the custom resources required for TLS certificates, and renews the configuration of Fluentd and Fluent Bit accordingly.
+One Eye provides a simple way to enable SSL encryption between the components of your logging infrastructure, and automates its management using cert-manager: it creates the custom resources required for TLS certificates, and renews the configuration of Fluentd and Fluent Bit accordingly. For details, see {{% xref "/docs/one-eye/configure-logging-infrastructure/tls/index.md" %}}.
 
 ## Multicluster metrics
 

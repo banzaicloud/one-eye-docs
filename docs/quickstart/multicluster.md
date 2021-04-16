@@ -3,9 +3,7 @@ title: Multicluster setup
 weight: 200
 ---
 
-<!-- FIXME: Link to multicluster overview -->
-
-The following procedure shows you how to collect metrics from a peer cluster to an existing One Eye deployment. The cluster running the One Eye deployment is called the **observer cluster**, the new cluster you are collecting metrics from is called the **peer cluster**.
+The following procedure shows you how to collect metrics from a peer cluster to an existing One Eye deployment. The cluster running the One Eye deployment is called the **observer cluster**, the new cluster you are collecting metrics from is called the **peer cluster**. For details on how One Eye collects metrics from multiple clusters, see {{% xref "/docs/one-eye/multicluster/_index.md" %}}.
 
 ## Prerequisites
 
@@ -13,6 +11,8 @@ The following procedure shows you how to collect metrics from a peer cluster to 
 - You have another cluster that will be the peer cluster.
 
 {{< include-headless "warning-prometheus-label.md" "one-eye" >}}
+
+{{< include-headless "multicluster-metrics-limitations.md" "one-eye" >}}
 
 ## Steps
 
@@ -43,7 +43,9 @@ The following procedure shows you how to collect metrics from a peer cluster to 
     ```
 
 1. Create a secret that will be used to establish trust between the observer and the peer clusters. The following steps show you how to use the same certificate on both clusters.
-    <!-- FIXME: Mention other possibilities -->
+    <!-- FIXME: Mention other possibilities
+    > pepov mentioned that secrets from an external PKI like vault can be used - how?
+    > what if the clusters are in a service mesh? -->
 
     1. Create a self-signed CA and a certificate.
 
