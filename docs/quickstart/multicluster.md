@@ -93,7 +93,7 @@ The following procedure shows you how to collect metrics from a peer cluster to 
           dnsNames:
           - $PEER_ENDPOINT
           issuerRef:
-        name: selfsigned
+            name: selfsigned
           usages:
           - server auth
           - client auth
