@@ -103,7 +103,7 @@ The following procedure shows you how to collect metrics from a peer cluster to 
     1. Save the secret so you can load it into the peer later (for example, into the file called peer-tls.yaml).
 
         ```bash
-        kubectl neat get secret peer-tls -o yaml > peer-tls.yaml
+        kubectl get secret peer-tls -o yaml > peer-tls.yaml
         ```
 
     1. Switch to the peer cluster.
