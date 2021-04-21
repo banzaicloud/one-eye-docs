@@ -60,7 +60,7 @@ The following procedure shows you how to collect metrics from a peer cluster to 
         EOF
         ```
 
-    1. Create a Kubernetes secret for the certificate with proper labels. The labels are needed so the Thanos operator can find the secret and attach it to the ThanosPeer custom resource.
+    1. Create a Kubernetes secret for the certificate with proper labels (**monitoring.banzaicloud.io/thanospeer** and **monitoring.banzaicloud.io/thanospeer-ca**). The labels are needed so the Thanos operator can find the secret automatically and attach it to the ThanosPeer custom resource.
 
         ```bash
         cat <<EOF | kubectl apply -f-
