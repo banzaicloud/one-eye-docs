@@ -21,8 +21,8 @@ Before deploying One Eye on your cluster, complete the following tasks.
 
     <!-- FIXME: Resource requirements? -->
 
-1. (Optional) If you want to test One Eye in a multicluster environment, create one more cluster.
-1. Create an object store.
+1. (Optional) If you want to test [One Eye in a multicluster environment](/docs/one-eye/quickstart/multicluster/), create one more cluster.
+1. (Optional) To store your data for longer period, create an object store. If you are just running a quick test, you don't necessarily need an object store.
 
     You will need an object store. Thanos supports many types of object storage, see the [official Thanos documentation](https://thanos.io/tip/thanos/storage.md/) for details.
 
@@ -38,8 +38,6 @@ Before deploying One Eye on your cluster, complete the following tasks.
     1. Install the `one-eye-cli` package for your environment by running the following command:
 
         {{< include-headless "download-oneeye.md" >}}
-
-        For other options, see the [One Eye CLI Installation Guide](../cli/install/).
 
 {{% include-headless "doc/quickstart-set-kubernetes-context.md" %}}
 
