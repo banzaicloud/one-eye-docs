@@ -39,7 +39,7 @@ Before deploying One Eye on your cluster, complete the following tasks.
 
 {{% include-headless "doc/quickstart-set-kubernetes-context.md" %}}
 
-## Deploy One Eye
+## Deploy One Eye {#deploy-with-logging}
 
 After you have completed the [Prerequisites](#prerequisites), you can install One Eye on a single cluster.
 

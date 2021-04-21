@@ -7,7 +7,7 @@ The following procedure shows you how to collect metrics from a peer cluster to 
 
 ## Prerequisites
 
-- You have completed the steps described in {{% xref "/docs/one-eye/quickstart/_index.md" %}} and you have a working One Eye deployment.
+- You have completed the prerequisites described in {{% xref "/docs/one-eye/quickstart/_index.md#prerequisites" %}}.
 - You have another cluster that will be the peer cluster.
 
 {{< include-headless "warning-prometheus-label.md" "one-eye" >}}
@@ -19,8 +19,11 @@ The following procedure shows you how to collect metrics from a peer cluster to 
 > Note: The following procedure requires you to switch between the Kubernetes context of the observer and the peer cluster. A convenient way to switch between contexts is to use the [kubectx tool](https://github.com/ahmetb/kubectx).
 
 <!-- FIXME: Include a kubectx-less command? -->
+1. Deploy One Eye on the observer cluster. Run the **one-eye install** command, then follow the on-screen instructions.
 
-1. Obtain the name of the peer cluster, for example, by getting it from the current context of the peer's kubeconfig. 
+    > Note: The interactive installer helps you configure a simple logging system, this is detailed in {{% xref "/docs/one-eye/quickstart/_index.md#deploy-with-logging" %}}. To collect only metrics, you don't have to configure logging on the cluster. In this case, just set the name of the cluster, then reply **No** to the subsequent questions.
+
+1. Obtain the name of the peer cluster, for example, by getting it from the current context of the peer's kubeconfig.
 
     On the peer cluster, run the following command.
 
