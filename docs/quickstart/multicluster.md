@@ -169,3 +169,7 @@ The following procedure shows you how to collect metrics from a peer cluster to 
 
     open localhost:10902/stores
     ```
+
+    Select **Stores** on the Thanos web interface:
+
+    ![Thanos stores UI](../thanos-stores-ui.png)
