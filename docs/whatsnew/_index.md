@@ -4,6 +4,12 @@ shorttitle: What's new
 weight: 15
 ---
 
+## Release 0.5 (2021-04-19) {#oe05}
+
+One Eye allows you to attach multiple peer clusters to a central observer cluster to make your metrics available centrally, and store in object storage in a cost and storage-efficient way. One Eye automates several steps of connecting and maintaining the peer clusters, making it possible to operate your monitoring infrastructure with a low overhead. For details on how One Eye collects metrics from multiple clusters, see {{% xref "/docs/one-eye/multicluster/_index.md" %}}.
+
+In version 0.5, you can secure One Eye access using an external ingress, and authenticate and authorize user connections. The solution is based on [Pomerium](https://github.com/pomerium/pomerium) and [Dex](https://github.com/dexidp/dex), allowing you to use the identity provider of your choice (for example, GitHub or LDAP). You can also apply role based authorization, and assign read-only or read and write access to One Eye.
+
 ## Release 0.4 (2020-12-03) {#oe04}
 
 One Eye 0.4 brings the following significant new features:

@@ -1,6 +1,6 @@
 ---
 title: The One Eye command line interface
-shortTitle: CLI
+shortTitle: One Eye CLI
 weight: 910
 ---
 
