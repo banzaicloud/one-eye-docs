@@ -4,8 +4,6 @@ shorttitle: GitHub
 weight: 200
 ---
 
-<!-- FIXME a config resz igazabol hianyzik ebbol -->
-
 To authenticate One Eye access using GitHub accounts, you must create an **OAuth application** on GitHub (Dex documentation refers this as a **github client**).
 
 These applications require a callback url where the authentication process continues after GitHub has finished its own part. As a result, you need a separate application for every root domain.
