@@ -70,7 +70,7 @@ The following procedure shows you how to collect metrics from a peer cluster to 
         apiVersion: v1
         kind: Secret
         metadata:
-          name: peer-tls
+          name: ${PEER_ENDPOINT}-tls
           labels:
             monitoring.banzaicloud.io/thanospeer: ${PEER_ENDPOINT}
             monitoring.banzaicloud.io/thanospeer-ca: ${PEER_ENDPOINT}
@@ -89,9 +89,9 @@ The following procedure shows you how to collect metrics from a peer cluster to 
         apiVersion: cert-manager.io/v1
         kind: Certificate
         metadata:
-          name: peer-tls
+          name: ${PEER_ENDPOINT}-tls
         spec:
-          secretName: peer-tls
+          secretName: ${PEER_ENDPOINT}-tls
           commonName: peer-endpoint.cluster.notld
           dnsNames:
           - $PEER_ENDPOINT
@@ -103,10 +103,10 @@ The following procedure shows you how to collect metrics from a peer cluster to 
         EOF
         ```
 
-    1. Save the secret so you can load it into the peer later (for example, into the file called peer-tls.yaml).
+    1. Save the secret so you can load it into the peer later (for example, into the file called ${PEER_ENDPOINT}-tls.yaml).
 
         ```bash
-        kubectl get secret peer-tls -o yaml > peer-tls.yaml
+        kubectl get secret ${PEER_ENDPOINT}-tls -o yaml > ${PEER_ENDPOINT}-tls.yaml
         ```
 
     1. Switch to the peer cluster.
@@ -133,7 +133,7 @@ The following procedure shows you how to collect metrics from a peer cluster to 
     1. Apply the saved secret.
 
         ```bash
-        kubectl apply -f peer-tls.yaml
+        kubectl apply -f ${PEER_ENDPOINT}-tls.yaml
         ```
 
 1. Connect the peer cluster to the observer cluster.
@@ -141,7 +141,7 @@ The following procedure shows you how to collect metrics from a peer cluster to 
     1. On the peer cluster, create the ThanosEndpoint custom resource.
 
         ```bash
-        one-eye thanos endpoint generate $PEER_ENDPOINT --cert-secret-name peer-tls --ca-bundle-secret-name peer-tls | kubectl apply -f-
+        one-eye thanos endpoint generate $PEER_ENDPOINT --cert-secret-name ${PEER_ENDPOINT}-tls --ca-bundle-secret-name ${PEER_ENDPOINT}-tls | kubectl apply -f-
         ```
 
     1. Generate the ThanosPeer custom resource for the cluster and save it (for example, into the thanos-peer.yaml file).
