@@ -23,18 +23,6 @@ Once the request successfully passes Pomerium, the One Eye Dashboard will check 
 
 ## Steps
 
-1. Install cert-manager.
-
-    ```bash
-    one-eye cert-manager install --update
-    ```
-
-1. Install an external ingress controller.
-
-    ```bash
-    one-eye ingress install --update
-    ```
-
 1. Install Pomerium. The following command installs Pomerium and Dex, and configures Dex as well:
 
     ```bash
