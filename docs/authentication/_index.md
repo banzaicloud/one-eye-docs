@@ -10,7 +10,7 @@ Authentication uses the latest stable version of cert-manager to ensure secure T
 
 Pomerium applies route based access policies so that general access to specific components can be gated at the proxy level.
 
-Once the request successfully passes Pomerium, the One Eye Dashboard will check group-role mapping information to identify which groups should have viewer and/or editor access on the UI. 
+Once the request successfully passes Pomerium, the One Eye Dashboard will check group-role mapping information to identify which groups should have viewer and/or editor access on the UI.
 
 > Note: This doesn't apply to provided components, like Prometheus or the Grafana dashboard, where all users will be viewers. In case you need Grafana administrator access, use the `one-eye ingress connect` command to access the Grafana dashboard as an admin under the `/grafana` subpath.
 
@@ -41,20 +41,24 @@ Once the request successfully passes Pomerium, the One Eye Dashboard will check 
         - To use static login, enter N.
         - To use GitHub authentication, enter Y, then provide the GitHub client ID and GitHub Client Secret of the OAuth app you want to use. For details, see {{% xref "/docs/one-eye/authentication/create-github-oauth.md" %}}.
 
-            By default, everyone who successfully completes the authentication needs to be explicitly allowed to pass Pomerium authorization, and additionally to have read and/or write access to One Eye. You can specify user groups that can pass through Pomerium and get read (viewer) or read and write (editor) access in the **spec.authorization.groupRoleMapping** section of the [Observer custom resource]({{< relref "/docs/one-eye/crds/oneeye_types.md#observerspec" >}}).
-apiVersion: one-eye.banzaicloud.io/v1alpha1
-kind: Observer
-metadata:
-  name: one-eye
-spec:
-  authorization:
-    groupRoleMapping:
-      demo: viewer
-      demo-editor: editor
+            By default, everyone who successfully completes the authentication needs to be explicitly allowed to pass Pomerium authorization, and additionally to have read and/or write access to One Eye. You can specify user groups that can pass through Pomerium and get read (viewer) or read and write (editor) access in the **spec.authorization.groupRoleMapping** section of the [Observer custom resource]({{< relref "/docs/one-eye/crds/oneeye_types.md#observerspec" >}}). For example:
+
+            ```yaml
+            apiVersion: one-eye.banzaicloud.io/v1alpha1
+            kind: Observer
+            metadata:
+              name: one-eye
+            spec:
+              authorization:
+                groupRoleMapping:
+                  demo: viewer
+                  demo-editor: editor
+            ```
 
         Individual users can also be allowlisted to pass Pomerium, but they will be authorized to access the One Eye dashboard based on the following conditions:
-        - if `groupRoleMapping` is empty every user in `authorizedUsers` will have the `editor` role.
-        - if `groupRoleMapping` has one or more items, then `authorizedUsers` will have roles that are defined by the mapping, so they will *not* have `editor` by default
+
+        - If `groupRoleMapping` is empty, every user in `authorizedUsers` will have the `editor` role.
+        - If `groupRoleMapping` has one or more items, then `authorizedUsers` will have roles that are defined by the mapping, so they will *not* have `editor` by default.
 
 1. If you are registering your own domain name, add a wildcard CNAME record to the domain name that resolves to the external ingress endpoint of One Eye. For example, if your root domain is **cloud.example.com**, then `*.cloud.example.com` should resolve to your external ingress endpoint on AWS, like `aefc366f7de9941ccb60f8ad9a0a1dee-1633558956.eu-central-1.elb.amazonaws.com`.
 
