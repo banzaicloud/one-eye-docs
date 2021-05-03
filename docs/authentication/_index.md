@@ -42,7 +42,15 @@ Once the request successfully passes Pomerium, the One Eye Dashboard will check 
         - To use GitHub authentication, enter Y, then provide the GitHub client ID and GitHub Client Secret of the OAuth app you want to use. For details, see {{% xref "/docs/one-eye/authentication/create-github-oauth.md" %}}.
 
             By default, everyone who successfully completes the authentication gets read and write access to One Eye. You can specify usergroups that get read (viewer) or read and write (editor) access in the **spec.authorization.groupRoleMapping** section of the [Observer custom resource]({{< relref "/docs/one-eye/crds/oneeye_types.md#observerspec" >}}).
-            <!-- FIXME example -->
+apiVersion: one-eye.banzaicloud.io/v1alpha1
+kind: Observer
+metadata:
+  name: one-eye
+spec:
+  authorization:
+    groupRoleMapping:
+      demo: viewer
+      demo-editor: editor
 
 1. If you are registering your own domain name, add a wildcard CNAME record to the domain name that resolves to the external ingress endpoint of One Eye. For example, if your root domain is **cloud.example.com**, then `*.cloud.example.com` should resolve to your external ingress endpoint on AWS, like `aefc366f7de9941ccb60f8ad9a0a1dee-1633558956.eu-central-1.elb.amazonaws.com`.
 
