@@ -6,7 +6,13 @@ weight: 800
 
 You can secure One Eye access using an external ingress, and authenticate and authorize user connections. The solution is based on [Pomerium](https://github.com/pomerium/pomerium) and [Dex](https://github.com/dexidp/dex), allowing you to use the identity provider of your choice (for example, GitHub or LDAP). You can also apply role based authorization, and assign read-only or read and write access to One Eye.
 
-Authentication uses cert-manager to establish secure connections. Authentication is performed using Pomerium, which uses Dex to authenticate requests to external OIDC providers.
+Authentication uses the latest stable version of cert-manager to ensure secure TLS certificates for external components like Pomerium and Dex. Authentication is performed by Pomerium with the help of Dex through OIDC to authenticate requests to external identity providers.
+
+Pomerium applies route based access policies so that general access to specific components can be gated at the proxy level.
+
+Once the request successfully passes Pomerium, the One Eye Dashboard will check group-role mapping information to identify which groups should have viewer and/or editor access on the UI. 
+
+> Note: This doesn't apply to provided components, like Prometheus or the Grafana dashboard, where all users will be viewers. In case you need Grafana administrator access, use the `one-eye ingress connect` command to access the Grafana dashboard as an admin under the `/grafana` subpath.
 
 ![Authentication overview](authentication-overview.png)
 
