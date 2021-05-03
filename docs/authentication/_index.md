@@ -52,6 +52,10 @@ spec:
       demo: viewer
       demo-editor: editor
 
+        Individual users can also be allowlisted to pass Pomerium, but they will be authorized to access the One Eye dashboard based on the following conditions:
+        - if `groupRoleMapping` is empty every user in `authorizedUsers` will have the `editor` role.
+        - if `groupRoleMapping` has one or more items, then `authorizedUsers` will have roles that are defined by the mapping, so they will *not* have `editor` by default
+
 1. If you are registering your own domain name, add a wildcard CNAME record to the domain name that resolves to the external ingress endpoint of One Eye. For example, if your root domain is **cloud.example.com**, then `*.cloud.example.com` should resolve to your external ingress endpoint on AWS, like `aefc366f7de9941ccb60f8ad9a0a1dee-1633558956.eu-central-1.elb.amazonaws.com`.
 
     For load balancers that provision IP addresses, you can set up an A record instead.
