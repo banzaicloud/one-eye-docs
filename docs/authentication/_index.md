@@ -41,7 +41,7 @@ Once the request successfully passes Pomerium, the One Eye Dashboard will check 
         - To use static login, enter N.
         - To use GitHub authentication, enter Y, then provide the GitHub client ID and GitHub Client Secret of the OAuth app you want to use. For details, see {{% xref "/docs/one-eye/authentication/create-github-oauth.md" %}}.
 
-            By default, everyone who successfully completes the authentication gets read and write access to One Eye. You can specify usergroups that get read (viewer) or read and write (editor) access in the **spec.authorization.groupRoleMapping** section of the [Observer custom resource]({{< relref "/docs/one-eye/crds/oneeye_types.md#observerspec" >}}).
+            By default, everyone who successfully completes the authentication needs to be explicitly allowed to pass Pomerium authorization, and additionally to have read and/or write access to One Eye. You can specify user groups that can pass through Pomerium and get read (viewer) or read and write (editor) access in the **spec.authorization.groupRoleMapping** section of the [Observer custom resource]({{< relref "/docs/one-eye/crds/oneeye_types.md#observerspec" >}}).
 apiVersion: one-eye.banzaicloud.io/v1alpha1
 kind: Observer
 metadata:
