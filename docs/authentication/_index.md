@@ -33,7 +33,7 @@ Once the request successfully passes Pomerium, the One Eye Dashboard will check 
 
     1. **Root domain of Pomerium (localhost.banzaicloud.io)**: Enter the root domain for Pomerium. The default root domain is `localhost.banzaicloud.io`, which is good for experimenting locally, since it resolves to `127.0.0.1`. If you don't use the default, note that:
 
-        - You must configure your DNS to resolve `*.<root-domain>` addresses.
+        - You must configure your DNS to resolve `*.<root-domain>` addresses. (Or at least add `one-eye.<root-domain>`, `authentication.<root-domain>` and the `dex.<root-domain>` to your hosts file pointing to the external ingress' Loadbalancer address.)
         - GitHub authentication will require a custom clientID/secret pair too. For details, see {{% xref "/docs/one-eye/authentication/create-github-oauth.md" %}}.
 
     1. **Configure GitHub IdP? (Y/n)**: You can configure Dex to authenticate through a GitHub client, or you can use an automatically generated static login.
