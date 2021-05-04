@@ -38,7 +38,7 @@ Once the request successfully passes Pomerium, the One Eye Dashboard will check 
 
     1. **Configure GitHub IdP? (Y/n)**: You can configure Dex to authenticate through a GitHub client, or you can use an automatically generated static login.
 
-        - To use static login, enter N.
+        - To use static login, enter N. One Eye will automatically generate a static login and display it at after the interactive questions.
         - To use GitHub authentication, enter Y, then provide the GitHub client ID and GitHub Client Secret of the OAuth app you want to use. For details, see {{% xref "/docs/one-eye/authentication/create-github-oauth.md" %}}.
 
             By default, everyone who successfully completes the authentication needs to be explicitly allowed to pass Pomerium authorization, and additionally to have read and/or write access to One Eye. You can specify user groups that can pass through Pomerium and get read (viewer) or read and write (editor) access in the **spec.authorization.groupRoleMapping** section of the [Observer custom resource]({{< relref "/docs/one-eye/crds/oneeye_types.md#observerspec" >}}). For example:
@@ -55,7 +55,7 @@ Once the request successfully passes Pomerium, the One Eye Dashboard will check 
                   demo-editor: editor
             ```
 
-        Individual users can also be allowlisted to pass Pomerium, but they will be authorized to access the One Eye dashboard based on the following conditions:
+        You can add individual users to an allowlist to pass Pomerium, but they will be authorized to access the One Eye dashboard based on the following conditions:
 
         - If `groupRoleMapping` is empty, every user in `authorizedUsers` will have the `editor` role.
         - If `groupRoleMapping` has one or more items, then `authorizedUsers` will have roles that are defined by the mapping, so they will *not* have `editor` by default.
