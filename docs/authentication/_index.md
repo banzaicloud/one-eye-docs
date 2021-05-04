@@ -51,8 +51,8 @@ Once the request successfully passes Pomerium, the One Eye Dashboard will check 
             spec:
               authorization:
                 groupRoleMapping:
-                  demo: viewer
-                  demo-editor: editor
+                  example-user: viewer
+                  example-admin: editor
             ```
 
         You can add individual users to an allowlist to pass Pomerium, but they will be authorized to access the One Eye dashboard based on the following conditions:
