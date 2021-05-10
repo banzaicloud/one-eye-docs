@@ -1,0 +1,15 @@
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata:
+  name: <name-of-the-clusterissuer>
+spec:
+  acme:
+    email: <administrator-email-address>
+    preferredChain: ""
+    privateKeySecretRef:
+      name: one-eye-issuer-account-key
+    server: https://acme-v02.api.letsencrypt.org/directory
+    solvers:
+    - http01:
+        ingress:
+          class: one-eye-nginx-external
