@@ -33,7 +33,7 @@ To use certificates issued by Let's Encrypt on the One Eye login page, complete 
         issuer: <name-of-the-clusterissuer>"
     ```
 
-1. Delete the old Pomerium secret.
+1. Delete the old Pomerium secret and the certificate as well if you previously configured cert manager with the default issuer.
 
     ```bash
     kubectl delete secret one-eye-pomerium-secret
