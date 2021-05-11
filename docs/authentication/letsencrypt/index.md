@@ -54,12 +54,5 @@ To use certificates issued by Let's Encrypt on the One Eye login page, complete 
 
     In the output, the READY field should be true.
 
-1. Run the following command:
-
-    ```bash
-    one-eye pomerium install --update
-    ```
-
-    Wait until the reconciling is finished.
 
 1. Open the external URL of the One Eye Dashboard in your browser, and verify that the certificate shown on the login screen is valid.
