@@ -40,6 +40,12 @@ To use certificates issued by Let's Encrypt on the One Eye login page, complete 
     kubectl delete secret one-eye-pomerium-ingress
     ```
 
+1. Rerun the reconciler to apply the changes and create the new certificate resource.
+
+    ```bash
+    one-eye observer reconcile
+    ```
+
 1. Wait until cert-manager creates a new secret for Pomerium that uses a Let's Encrypt certificate.
 
     ```bash
