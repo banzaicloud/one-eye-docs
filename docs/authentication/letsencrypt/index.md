@@ -22,7 +22,7 @@ To use certificates issued by Let's Encrypt on the One Eye login page, complete 
         kubectl get clusterissuers.cert-manager.io
         ```
 
-1. Edit the Observer custom resource of One Eye, set the **observer.spec.certmanager.issuer** field to the name of the ClusterIssuer, then apply your changes. On the running One Eye cluster, you can do that by running ```kubectl edit observer```.
+1. Update the Observer custom resource of One Eye, set the **observer.spec.certmanager.issuer** field to the name of the ClusterIssuer.
 
     ```bash
     kubectl patch observer one-eye --type merge -p "
