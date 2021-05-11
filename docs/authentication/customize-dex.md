@@ -7,13 +7,13 @@ To customize the Dex configuration of your One Eye installation, complete the fo
 
 ## Prerequisites
 
-You must have a working One Eye installation that uses [GitHub authentication]({{< relref "/docs/one-eye/authentication/_index.md" >}}).
+You must have a working One Eye installation. [Dex supports several different authentication backends](https://dexidp.io/docs/connectors/), the following example uses [GitHub authentication]({{< relref "/docs/one-eye/authentication/_index.md" >}}).
 
 ## Steps
 
 1. Prepare a customized Dex configuration snippet.
 
-    > Note: One Eye installs Dex using the [official Dex Helm chart](https://github.com/dexidp/helm-charts/tree/dex-0.0.7/charts/dex). For details on the Dex parameters you can configure, see the [list of Dex configuration values](https://github.com/dexidp/helm-charts/tree/dex-0.0.7/charts/dex#values).
+    > Note: One Eye installs Dex using the [official Dex Helm chart](https://github.com/dexidp/helm-charts/tree/dex-0.0.7/charts/dex). For details on the Dex parameters you can configure, see the [list of Dex configuration values](https://github.com/dexidp/helm-charts/tree/dex-0.0.7/charts/dex#values), and the [official Dex documentation](https://dexidp.io/docs/connectors/).
 
     ```bash
     configyaml="
