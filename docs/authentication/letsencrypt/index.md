@@ -52,7 +52,7 @@ To use certificates issued by Let's Encrypt on the One Eye login page, complete 
     kubectl get certificate one-eye-pomerium-ingress
     ```
 
-    In the output, the READY field of ```one-eye-pomerium-ingress``` should be true.
+    In the output, the READY field should be true.
 
 1. Run the following command:
 
