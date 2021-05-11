@@ -58,9 +58,9 @@ You must have a working One Eye installation. [Dex supports several different au
     spec:
       dex:
         dexchart:
-        valuesSecret:
-          key: config
-          name: <name-of-dex-secret>"
+          valuesSecret:
+            key: config
+            name: <name-of-dex-secret>"
     ```
 
 1. Edit your One Eye Observer custom resource (called one-eye in the example) and set a groupRoleMapping to give editor privileges to a GitHub group.
