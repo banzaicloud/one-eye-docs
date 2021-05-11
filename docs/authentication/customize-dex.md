@@ -45,7 +45,7 @@ You must have a working One Eye installation that uses [GitHub authentication]({
     EOF
     ```
 
-1. Extract the configuration of the secret. You will need it to configure Dex.
+1. Check that the secret is successfully created with the proper configuration.
 
     ```bash
     kubectl get secret <name-of-dex-secret> -o json | jq -r '.data | map_values(@base64d)["config"]'
