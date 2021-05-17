@@ -16,4 +16,4 @@ To create a custom GitHub client ID, you have to register an OAuth application o
 1. Select **Register a new application** or **New OAuth App** (whichever is visible).
 1. Complete the form. Set the **Authorization callback URL** field to `https://dex.{root domain}/dex/callback` (for example, to https://dex.localhost.banzaicloud.io/dex/callback if you are using the default root domain).
 1. Select **Generate new client secret**.
-1. Save the **clientID** and **clientSecret** pair. You will need them in your Dex configuration.
+1. Save the **clientID** and **clientSecret** pair. You will need them during the [interactive Pomerium installation]({{< relref "../_index.md" >}}), or in your [custom Dex configuration]({{< relref "customize-dex.md" >}}).
