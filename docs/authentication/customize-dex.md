@@ -31,7 +31,7 @@ You must have a working One Eye installation. [Dex supports several different au
     "
     ```
 
-1. Create a secret using the configuration snippet from the previous step to use with Dex. Adjust the namespace if needed:
+1. Create a secret using the configuration snippet from the previous step to use with Dex. Adjust the namespace if needed to match the namespace Dex is installed in:
 
     ```bash
     kubectl apply -f -<<EOF
