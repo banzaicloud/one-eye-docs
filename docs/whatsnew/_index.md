@@ -14,6 +14,8 @@ One Eye is now available as Cisco Multi Cloud Observability Manager.
 
 Metrics of the host observer cluster are displayed in the Topology view of the dashboard, independently from remote ThanosPeer clusters.
 
+![Host observer metrics](host-observer-metrics.png)
+
 ### Authentication improvements
 
 Authentication now supports using custom Dex configurations as well. For details, see {{% xref "/docs/one-eye/authentication/_index.md" %}}.
