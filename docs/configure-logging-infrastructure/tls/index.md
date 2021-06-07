@@ -32,23 +32,23 @@ To enable TLS encryption between Fluentd and Fluent Bit, complete the following 
 
     ```yaml
     apiVersion: logging.banzaicloud.io/v1beta1
-    kind: Logging
+      kind: Logging
     metadata:
-    name: one-eye
+      name: one-eye
     spec:
-    enableRecreateWorkloadOnImmutableFieldChange: true
-    controlNamespace: default
-    fluentbit:
+      enableRecreateWorkloadOnImmutableFieldChange: true
+      controlNamespace: default
+      fluentbit:
         tls:
-        enabled: true
-        secretName: one-eye-fluentbit-secret
-    ...`
-    fluentd:
+          enabled: true
+          secretName: one-eye-fluentbit-secret
+      ...
+      fluentd:
         tls:
-        enabled: true
-        secretName: one-eye-fluentd-secret
+          enabled: true
+          secretName: one-eye-fluentd-secret
         image:
-        tag: v1.9.2-alpine-9
-        repository: banzaicloud/one-eye-fluentd
+          tag: v1.9.2-alpine-9
+          repository: banzaicloud/one-eye-fluentd
         disablePvc: true
     ```
