@@ -4,6 +4,29 @@ shorttitle: What's new
 weight: 15
 ---
 
+## Release 0.6 (2021-05-21) {#oe06}
+
+### Rebranding
+
+One Eye is now available as Cisco Multi Cloud Observability Manager.
+
+### Host observer metrics
+
+Metrics of the host observer cluster are displayed in the Topology view of the dashboard, independently from remote ThanosPeer clusters.
+
+![Host observer metrics](host-observer-metrics.png)
+
+### Authentication improvements
+
+Authentication now supports using custom Dex configurations as well. For details, see {{% xref "/docs/one-eye/authentication/_index.md" %}}.
+
+### Other improvements
+
+- The operator now automatically upgrades its own Observer CRD
+- The imagePullSecrets field is now added to all managed workloads
+- Incorporate Thanos Operator CRDs into the chart
+- ARM builds are now supported.
+
 ## Release 0.5 (2021-04-19) {#oe05}
 
 One Eye allows you to attach multiple peer clusters to a central observer cluster to make your metrics available centrally, and store in object storage in a cost and storage-efficient way. One Eye automates several steps of connecting and maintaining the peer clusters, making it possible to operate your monitoring infrastructure with a low overhead. For details on how One Eye collects metrics from multiple clusters, see {{% xref "/docs/one-eye/multicluster/_index.md" %}}.
