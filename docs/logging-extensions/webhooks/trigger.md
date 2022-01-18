@@ -2,6 +2,7 @@
 title: Trigger the file tailer webhook
 shorttitle: Trigger
 weight: 200
+rewrite: /docs/one-eye/logging-operator/configuration/extensions/tailer-webhook/
 ---
 
 `File tailer webhook` is based on a [`Mutating Admission Webhook`](https://kubernetes.io/docs/reference/access-authn-authz/extensible-admission-controllers/) which gets called every time when a pod starts, and will be triggered when a pod specification contains an annotation with the `sidecar.logging-extensions.banzaicloud.io/tail` key. For example:

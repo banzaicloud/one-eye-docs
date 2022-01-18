@@ -2,6 +2,7 @@
 title: HostTailer
 weight: 200
 generated_file: true
+rewrite: /docs/one-eye/logging-operator/configuration/crds/extensions/v1alpha1/hosttailer_types/
 ---
 
 ## HostTailerSpec
