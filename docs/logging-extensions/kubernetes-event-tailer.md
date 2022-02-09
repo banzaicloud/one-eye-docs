@@ -1,6 +1,7 @@
 ---
 title: Kubernetes Event Tailer
 weight: 100
+rewrite: /docs/one-eye/logging-operator/configuration/extensions/kubernetes-event-tailer/
 ---
 
 Kubernetes events are objects that provide insight into what is happening

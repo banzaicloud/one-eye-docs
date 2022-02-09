@@ -2,6 +2,7 @@
 title: Install the webhook
 shorttitle: Install
 weight: 100
+rewrite: /docs/one-eye/logging-operator/configuration/extensions/tailer-webhook/
 ---
 
 The only thing you need is to provide valid TLS certificates to the `file tailer webhook`. 

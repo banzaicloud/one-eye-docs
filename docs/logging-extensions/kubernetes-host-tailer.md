@@ -1,6 +1,7 @@
 ---
 title: Kubernetes Host Tailer
 weight: 200
+rewrite: /docs/one-eye/logging-operator/configuration/extensions/kubernetes-host-tailer/
 ---
 
 Kubernetes host tailer allows you to tail logs like `kubelet`, `audit` logs, or the `systemd` journal from the nodes.

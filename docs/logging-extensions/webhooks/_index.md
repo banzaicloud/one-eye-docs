@@ -2,6 +2,7 @@
 title: Logging extensions file tailer webhook
 shorttitle: File tailer webhook
 weight: 1000
+rewrite: /docs/one-eye/logging-operator/configuration/extensions/tailer-webhook/
 ---
 
 Another way to keep your custom file's content tailed aside of [`host file tailer`]({{< relref "/docs/one-eye/logging-extensions/reference/hosttailer_types.md" >}}) service, to configure and use the `file tailer webhook` service.
