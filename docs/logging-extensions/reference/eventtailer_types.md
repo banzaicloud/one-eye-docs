@@ -2,7 +2,7 @@
 title: EventTailer
 weight: 200
 generated_file: true
-rewrite: /docs/one-eye/logging-operator/configuration/crds/extensions/v1alpha1/eventtailer_types/
+rewrite: /docs/one-eye/logging-operator/configuration/crds/extensions/eventtailer_types/
 ---
 
 ## EventTailerSpec

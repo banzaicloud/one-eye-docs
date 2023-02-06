@@ -3,7 +3,7 @@ title: Api reference
 shortTitle: Reference
 generated_file: true
 weight: 30
-rewrite: /docs/one-eye/logging-operator/configuration/crds/extensions/v1alpha1/
+rewrite: /docs/one-eye/logging-operator/configuration/crds/extensions/
 ---
 # Available Types
 
