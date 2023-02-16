@@ -45,7 +45,7 @@ After you have completed the [Prerequisites](#prerequisites), you can install On
 
 > Note: To use One Eye in a multicluster environment, you can [add peer clusters](#multicluster) later.
 
-1. The following command installs the main One Eye components and their dependencies, including the *[Logging Operator](/docs/one-eye/logging-operator/)*, the *[Logging Extension](/docs/one-eye/logging-extensions/)*, a *Prometheus Operator*, and the One Eye web interface.
+1. The following command installs the main One Eye components and their dependencies, including the *[Logging Operator](https://kube-logging.github.io/docs/)*, the *[Logging Extension](/docs/one-eye/logging-extensions/)*, a *Prometheus Operator*, and the One Eye web interface.
 
     ```bash
     one-eye install
@@ -92,7 +92,7 @@ After you have completed the [Prerequisites](#prerequisites), you can install On
     You can edit this template and decide to apply it on the cluster or not. After applying
     the logging resource, continue to create an `Output` and a `Flow`.
 
-1. Configure an output. You can configure an S3 output, or a nullout output (the interactive mode supports only these outputs, you can [configure other outputs in the Logging operator](/docs/one-eye/logging-operator/) after you have finished the installation).
+1. Configure an output. You can configure an S3 output, or a nullout output (the interactive mode supports only these outputs, you can [configure other outputs in the Logging operator](https://kube-logging.github.io/docs/) after you have finished the installation).
 
     ```bash
     ? What type of output do you need? s3
@@ -134,7 +134,7 @@ After you have completed the [Prerequisites](#prerequisites), you can install On
 
     > Note: For details on configuring different output types, see the {{% xref "/docs/one-eye/logging-operator/quickstarts/_index.md" %}}.
 
-1. Configure a logging flow. The basic template provides an empty flow. Customize the `match` section and add filters from the [supported filter list](/docs/one-eye/logging-operator/configuration/plugins/filters/) if needed.
+1. Configure a logging flow. The basic template provides an empty flow. Customize the `match` section and add filters from the [supported filter list](https://kube-logging.github.io/docs/configuration/plugins/filters/) if needed.
 
     ```bash
     ? Select the namespace for your flow default
