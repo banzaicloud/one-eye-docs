@@ -3,7 +3,7 @@ title: Logging flows and outputs
 weight: 200
 ---
 
-You can configure the logging infrastructure from the command line by configuring the [Logging operator](/docs/one-eye/logging-operator/) and the [Logging Extensions operator](/docs/one-eye/logging-extensions/). Currently the One Eye web interface offers limited support to configure logging flows and logging outputs.
+You can configure the logging infrastructure from the command line by configuring the [Logging operator](https://kube-logging.github.io/docs/) and the [Logging Extensions operator](/docs/one-eye/logging-extensions/). Currently the One Eye web interface offers limited support to configure logging flows and logging outputs.
 
 > To modify the configuration of an existing object, click on the object on the **MENU > LOGGING OVERVIEW**, then select **Configuration**.
 
